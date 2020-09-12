@@ -1,0 +1,475 @@
+ 
+Q1.. Explore the following commands with various options, refer man pages for 
+    further help a) date b) cal c) bc d) echo e) who f) whoami g) logname g) uname h)
+    seq i) cleara.txt
+
+a) 
+
+date
+* Wed Sep  9 17:25:12 IST 2020
+
+date +%a
+* Wed
+
+date +%A
+* Wednesday
+
+date +%b
+* Sep
+
+date +%B
+* September
+
+date +%c
+* Wed Sep  9 17:26:41 2020
+
+date +%C
+* 20
+
+date +%d
+* 09
+
+date +%D
+* 09/09/20
+
+date +%e
+* 9
+
+date +%F
+* 2020-09-09
+
+date +%y
+* 20
+
+date +%Y
+* 2020
+
+date +%m
+* 09
+
+date +%T
+* 17:31:29
+
+date +%B' '%d' '%Y
+* September 09 2020
+
+date +%B' '%d' '%Y' '%T
+* September 09 2020 17:37:23
+
+==============================================================================================
+
+b) 
+cal
+cal 2022
+cal jan 2020
+cal 2020 -m1
+cal -m1 2020
+
+===============================================================================================
+
+d)
+echo "hello world"
+
+==============================================================================================
+
+f) 
+ whoami
+* sneha
+
+==============================================================================================
+
+g) 
+logname
+* logname: no login name
+
+==============================================================================================
+
+h)
+ uname
+* Linux
+
+===============================================================================================
+
+i)
+seq 10
+
+************************************************************************************************************************************************
+Q2.	
+ 
+
+ A) . Explore the following commands with various options, refer man pages for 
+    further help a) date b) cal c) bc d) echo e) who f) whoami g) logname g) uname h)
+    seq i) cleara.txt
+
+ 
+mkdir a b c
+  
+cd a
+
+touch a.txt b.txt c.txt
+cd ..
+
+cd b
+touch a.txt b.txt c.txt
+cd ..
+
+cd c
+touch a.txt b.txt c.txt
+cd ..
+
+cp -r c a
+ 
+=====================================================================================================  
+
+B)Move Directory b to c.
+mv b c
+
+=====================================================================================================
+
+D)Change Directory name a to cdac.
+mv a cdac
+
+*******************************************************************************************************************************************************
+
+Q3. 
+A)Create five files file1.txt , file2.txt ,file3.txt file4.txt and
+    file5.txt with some text inside it. Search for 's' character
+    inside all the files using grep command.
+    Also Use cat to view all file content together.
+
+ 
+cat>file1.txt
+hello
+
+ cat>file2.txt
+hello1
+
+cat>file3.txt
+hello 3
+
+ cat>file4.txt
+hello 4
+
+cat>file5.txt
+hello 5
+
+grep "s" *.txt
+
+=====================================================================================
+
+B)Create file.txt using cat and edit that using nano editor.
+
+cat>file.txt
+nano file.txt
+
+===================================================================================================
+
+C)Create 5 empty files using touch command
+touch f1 f2 f3 f4 f5
+
+=================================================================================================
+
+D)Remove previously created directory a , b and c.
+rm -r a b c
+
+*********************************************************************************************************************************************
+
+Q4. Create a file with some content using vi editor
+
+a) Display the file using cat command
+
+vi file1.txt
+cat file1.txt
+
+==========================================
+
+b) Display line numbers along with content
+
+cat -n file1.txt
+
+=========================================
+
+c) Display the file in reverse order using tac
+
+tac file1.txt
+
+========================================
+
+d) Combine multiple files using cat command
+
+cat file.txt >> file1.txt
+
+*************************************************************************************************************************************************
+
+Q5.Create Random some files and sub directories.
+
+a) display files row wise, column wise, 1 per row
+
+ls -1
+ls
+
+==============================================
+
+b) sort the files in ascending, descending order
+
+ls -1     (sort by name asc)
+ls -1 -r   (sort by name desc)
+ls -al -S   (sort by size desc)
+ls -al -Sr   (sort by size asc)
+
+===============================================
+
+c)Create some hidden files and sub directories and display them using “ls -a”
+
+touch .sn.txt
+ls -a
+
+================================================
+
+d)Change time stamp of some files and directories using touch command and display the files using ls -t ls -rt
+
+
+===============================================
+
+e)Recursive display contents of your home directory.
+ ls -r
+
+================================================
+
+f)display all attributes of files and directories using ls -l
+ls -l
+
+==============================================
+
+g)display attributes of a directory using ls -ld
+ls -ld
+
+*********************************************************************
+Q1. . Create directory of your name and then create 4 files inside it named
+
+a)txt, b.txt, c.txt and d.sh. And change the directory permission to
+	only user and also files permission to only user such that
+
+
+mkdir sneha
+touch a.txt b.txt c.txt d.sh
+chmod a-rwx a.txt b.txt
+
+b)user can read and write the file a.txt and b.txt
+ chmod u+rw a.txt b.txt
+
+c)user can write the file c.txt
+chmod u+w c.txt
+
+d)user can exectuable the file d.sh. Make
+			Contents of file d.sh:
+			#/bin/sh
+			ls -lh
+
+ chmod u+x d.sh 
+vi d.sh
+ bash d.sh
+
+*************************************************************
+Q2.Change the permission of the previous directory to executable only.
+chmod a+x ../
+
+**************************************************************
+Q3.. Change the permission of the previous directory to read only.
+	Analyze the output
+ 
+chmod a+r ../
+
+***************************************************************
+Q4.. Use echo to list the all files of your home directory.
+echo *
+
+***************************************************************
+Q5.Use echo to list the all files of /etc/ directory
+echo */*
+
+**************************************************************
+Q6.Use echo to list the all files of /etc/ directory with extension name .conf
+echo *.conf
+
+****************************************************************
+Q7.Use echo to append your name to a.txt
+echo "sneha" >> a.txt
+
+****************************************************************
+
+
+Note:Many operation might not work.Analyze them
+1.	Create Three level nested directory a,b and c
+a)Create at least one hidden file in each directory
+
+> mkdir -p a/b/c
+
+=========================================================
+
+b)Create at least one normal text file in each directory
+
+> touch filea.txt ./b/fileb.txt ./b/c/filec.txt
+=============================================================
+
+c)Copy c into a
+
+> cp -r b/c ./
+=====================================================
+
+d)Copy file inside a into b
+
+> cp filea.txt b/
+
+************************************************************************************
+
+2.	Change the third level directory c permission to read only
+
+	> chmod a+r b/c
+
+*************************************************************************************
+ 
+3.	Try copying third level c directory to outside of a
+
+	> cp b/c ../
+
+************************************************************************************
+
+4.	Create the directory  “data“ inside b
+
+	> mkdir b/data
+
+
+************************************************************************************
+
+5.	Change the permission of b to read and write only
+
+	> chmod u+rw b
+
+************************************************************************************
+
+6.	Create directory “data2”  inside b
+
+	> mkdir b/data2
+
+************************************************************************************
+
+7.	Create data.txt file inside b
+	
+	> touch b/data.txt
+
+************************************************************************************
+
+8.	Rename the second level directory c to copied_dir
+
+	> mv b/c a
+
+************************************************************************************
+
+9.	Change permission of copied_dir to only executable
+
+	> chmod u+x b/c
+
+************************************************************************************
+
+10.	Try ls on copied_dir
+
+	> ls cannot run because of executable only cannot read
+
+************************************************************************************
+
+11.	Try moving copied_dir to outside of a
+
+	> cannot move dir to outside because of restriced permissions
+
+************************************************************************************
+
+12.	Try moving data directory outside of a
+
+	> cannot move, permission access denied
+
+************************************************************************************
+
+13.	Now change the owner of the directory a to root
+
+	> groups username
+	
+	chgrp webdev file.txt
+
+	ls -l file.txt
+
+************************************************************************************
+
+14.	Change permission of a to read write and executable to only user
+
+	> chmod u+rwx a
+
+************************************************************************************
+
+15.	Try creating directory sample inside a
+
+	> mkdir a/d
+
+************************************************************************************
+
+16.	Create directory x outside a
+
+	> mkdir ../x
+
+************************************************************************************
+
+17.	Try moving x inside a
+
+	> mv x ./a
+
+************************************************************************************
+
+18.	Create directory movies
+
+	> mkdir movies
+
+************************************************************************************
+
+19.	Change group of movies to sudo
+
+	> sudo usermod -aG sudo newuser
+
+************************************************************************************
+
+
+20.	Change group of movies to avahi
+
+	> chgrp scifi myfile
+	
+	  ls -l myfile
+
+************************************************************************************
+ 
+21.	Try changing permission after changing ownership to root
+
+	> sudo chmod --recursive a+rwx /tmp
+
+
+************************************************************************************
+
+22.	Try Changing permission after changing group to sudo without sudo
+
+	> pkexec chmod go-w /usr/lib/sudo/sudoers.so
+
+************************************************************************************
+
+23.	Try Changing owner and group both to root
+
+	> sudo chown -R username:group directory
+
+
+************************************************************************************
+24.	Try changinging permission
+
+	> sudo usermod -aG sudo newuser
+
+
+************************************************************************************
+25.	Try deleting the file
+
+	> rm -rf a.txt
